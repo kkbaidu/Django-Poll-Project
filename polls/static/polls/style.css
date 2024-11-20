@@ -1,8 +1,249 @@
 
-body {
-    background: white url("images/background.png") no-repeat;
+/* General reset for consistency */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-li a {
-    color: green;
+/* Center the main container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Poll list styles */
+.poll-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.poll-item {
+    margin: 10px 0;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.poll-item:hover {
+    background-color: #4CAF50;
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+.poll-link {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
+}
+
+/* No polls message */
+.no-polls {
+    text-align: center;
+    font-size: 1.5em;
+    color: #999;
+    margin-top: 20px;
+}
+
+
+/* Form container */
+.vote-form {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Fieldset and legend */
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question-title {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Error message */
+.error-message {
+    color: #ff5555;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Choices */
+.choices {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-item {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.choice-input {
+    margin-right: 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.choice-label {
+    margin: 10px 0;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+    width: 100%;
+}
+
+.choice-label:hover {
+    background-color: #4CAF50;
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+.choice-input:checked + .choice-label {
+    background-color: #4CAF50;
+    transform: scale(1.02);
+    color: #ffffff;
+}
+
+/* Submit button */
+.submit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .question-title {
+        font-size: 1.5em;
+    }
+
+    .choice-label {
+        font-size: 1em;
+    }
+
+    .submit-button {
+        font-size: 1em;
+    }
+}
+
+
+/* Results Page Container */
+.results-container {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Results Title */
+.results-title {
+    font-size: 2.2em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Results List */
+.results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin: 10px 0;
+    background: #f1f1f1;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.result-item:hover {
+    background-color: #e1e1e1;
+}
+
+.choice-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.votes-text {
+    font-size: 1em;
+    color: #555;
+}
+
+/* "Vote Again" Link */
+.vote-again-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.vote-again-link:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }
